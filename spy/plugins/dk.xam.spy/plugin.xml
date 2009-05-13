@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="dk.xam.spy.commands.category"
+            name="Xam.dk Spy">
+      </category>
+      <command
+            categoryId="dk.xam.spy.commands.category"
+            id="dk.xam.spy.commands.SpyCommand"
+            name="Copy SWT/Balsamiq to Clipboard">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="dk.xam.spy.handlers.SpyHandler"
+            commandId="dk.xam.spy.commands.SpyCommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="dk.xam.spy.commands.SpyCommand"
+            contextId="org.eclipse.ui.contexts.dialogAndWindow"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M3+M2+F3">
+      </key>
+   </extension>
+   
+</plugin>

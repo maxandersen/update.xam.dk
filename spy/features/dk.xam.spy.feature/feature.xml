@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="dk.xam.spy.feature"
+      label="Spy"
+      version="0.5.1"
+      provider-name="Max Rydahl Andersen">
+
+   <description>
+      A &quot;Spy&quot; that allows you to convert the current window/dialog
+into Balsamiq Mockups
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin
+         id="dk.xam.spy"
+         download-size="0"
+         install-size="0"
+         version="0.5.1"
+         unpack="false"/>
+
+</feature>
