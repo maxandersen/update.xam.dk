@@ -3,7 +3,7 @@
    <description name="xam.dk Eclipse Update site" url="http://update.xam.dk">
       Small random utilities - no warranty whatsoever :)
    </description>
-   <feature url="features/dk.xam.spy.feature_0.5.1.jar" id="dk.xam.spy.feature" version="0.5.1">
+   <feature url="features/dk.xam.spy.feature_0.5.2.jar" id="dk.xam.spy.feature" version="0.5.2">
       <category name="dk.xam.update.spy"/>
    </feature>
    <category-def name="dk.xam.update.spy" label="Spy"/>

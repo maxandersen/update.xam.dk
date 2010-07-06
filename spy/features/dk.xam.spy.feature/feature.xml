@@ -2,7 +2,7 @@
 <feature
       id="dk.xam.spy.feature"
       label="Spy"
-      version="0.5.1"
+      version="0.5.2"
       provider-name="Max Rydahl Andersen">
 
    <description>
@@ -22,7 +22,7 @@ into Balsamiq Mockups
          id="dk.xam.spy"
          download-size="0"
          install-size="0"
-         version="0.5.1"
+         version="0.0.0"
          unpack="false"/>
 
 </feature>
