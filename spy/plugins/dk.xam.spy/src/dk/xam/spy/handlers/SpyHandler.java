@@ -92,8 +92,6 @@ public class SpyHandler extends AbstractHandler {
 
 	private int printChildren(Control c, int count, StringBuilder sb) {
 		BalsamiqControl bc = Balsamiq.getControlTypeID(c);
-		bc.setFontFactor( Activator.getDefault().getPreferenceStore().getDouble( PreferenceConstants.P_FONT ) );
-		bc.setScaleFactor( Activator.getDefault().getPreferenceStore().getDouble( PreferenceConstants.P_SCALE ) );
 		return bc.process(count, sb, 1);
 	}
 

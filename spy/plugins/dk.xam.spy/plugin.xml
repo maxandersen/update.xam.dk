@@ -34,7 +34,7 @@
       <page
             class="dk.xam.spy.preferences.SpyPreferencePage"
             id="dk.xam.spy.preferences.SpyPreferencePage"
-            name="Balsamiq Spy Preference Page">
+            name="Balsamiq Spy">
       </page>
    </extension>
    <extension

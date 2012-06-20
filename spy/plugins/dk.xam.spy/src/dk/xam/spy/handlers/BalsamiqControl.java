@@ -28,8 +28,7 @@ import org.eclipse.ui.forms.widgets.Hyperlink;
 
 class BalsamiqControl extends Balsamiq {
 
-	private static double scaleFactor = 1.0;
-	private static double fontFactor = 1.0;
+	
 	private final Control c;
 	
 	public BalsamiqControl(String ctrl, Control c) {
@@ -59,8 +58,8 @@ class BalsamiqControl extends Balsamiq {
 
 						Rectangle bounds = ti.getBounds(); // c.getDisplay().map(c, null,
 
-						bounds.width *= scaleFactor;
-						bounds.height *= scaleFactor;
+						bounds.width *= getSettings().getScaleFactor();
+						bounds.height *= getSettings().getScaleFactor();
 
 						return new Rectangle(xy.x, xy.y, bounds.width, bounds.height);
 					}
@@ -87,7 +86,7 @@ class BalsamiqControl extends Balsamiq {
 
 					@Override
 					int getFontSize() {
-						return (int) ( c.getFont().getFontData()[0].height * fontFactor );
+						return (int) ( c.getFont().getFontData()[0].height * getSettings().getFontFactor() );
 					}
 
 				};
@@ -97,6 +96,11 @@ class BalsamiqControl extends Balsamiq {
 		}
 		return controlCount;
 	}
+
+	protected BalsamiqSettings getSettings() {
+		return BalsamiqSettings.getInstance();
+	}
+
 
 	@Override
 	boolean isVisible() {
@@ -115,13 +119,14 @@ class BalsamiqControl extends Balsamiq {
 
 		Rectangle bounds = c.getBounds(); // c.getDisplay().map(c, null,
 
+		double scaleFactor = getSettings().getScaleFactor();
 		return new Rectangle((int) (xy.x * scaleFactor), (int) (xy.y * scaleFactor), (int) (bounds.width * scaleFactor), (int) (bounds.height * scaleFactor));
 
 	}
 
 	@Override
 	int getFontSize() {
-		return (int) ( c.getFont().getFontData()[0].height * fontFactor );
+		return (int) ( c.getFont().getFontData()[0].height * getSettings().getFontFactor());
 	}
 
 
@@ -270,14 +275,6 @@ class BalsamiqControl extends Balsamiq {
 		return null;
 	}
 
-	public void setFontFactor( double factor )
-	{
-		fontFactor = factor;
-	}
-
-	public void setScaleFactor( double factor )
-	{
-		scaleFactor = factor;
-	}
+	
 
 }
