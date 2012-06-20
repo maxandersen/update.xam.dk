@@ -29,5 +29,19 @@
             sequence="M3+M2+F3">
       </key>
    </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="dk.xam.spy.preferences.SpyPreferencePage"
+            id="dk.xam.spy.preferences.SpyPreferencePage"
+            name="Balsamiq Spy Preference Page">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="dk.xam.spy.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
    
 </plugin>

@@ -1,5 +1,8 @@
 package dk.xam.spy.handlers;
 
+import dk.xam.spy.Activator;
+import dk.xam.spy.preferences.PreferenceConstants;
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -9,18 +12,14 @@ import org.eclipse.swt.dnd.TextTransfer;
 import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchPartReference;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.internal.PartPane;
-import org.eclipse.ui.internal.ViewPane;
 import org.eclipse.ui.internal.WorkbenchPartReference;
-import org.eclipse.ui.part.ViewPart;
 
 /**
  * Our sample handler extends AbstractHandler, an IHandler base class.
@@ -92,9 +91,9 @@ public class SpyHandler extends AbstractHandler {
 
 
 	private int printChildren(Control c, int count, StringBuilder sb) {
-		
-		
 		BalsamiqControl bc = Balsamiq.getControlTypeID(c);
+		bc.setFontFactor( Activator.getDefault().getPreferenceStore().getDouble( PreferenceConstants.P_FONT ) );
+		bc.setScaleFactor( Activator.getDefault().getPreferenceStore().getDouble( PreferenceConstants.P_SCALE ) );
 		return bc.process(count, sb, 1);
 	}
 

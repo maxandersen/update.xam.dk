@@ -16,8 +16,6 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Link;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.TabFolder;
-import org.eclipse.swt.widgets.TabItem;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
@@ -30,7 +28,8 @@ import org.eclipse.ui.forms.widgets.Hyperlink;
 
 class BalsamiqControl extends Balsamiq {
 
-	private final double scaleFactor = 1.0;
+	private static double scaleFactor = 1.0;
+	private static double fontFactor = 1.0;
 	private final Control c;
 	
 	public BalsamiqControl(String ctrl, Control c) {
@@ -60,6 +59,9 @@ class BalsamiqControl extends Balsamiq {
 
 						Rectangle bounds = ti.getBounds(); // c.getDisplay().map(c, null,
 
+						bounds.width *= scaleFactor;
+						bounds.height *= scaleFactor;
+
 						return new Rectangle(xy.x, xy.y, bounds.width, bounds.height);
 					}
 
@@ -85,7 +87,7 @@ class BalsamiqControl extends Balsamiq {
 
 					@Override
 					int getFontSize() {
-						return (int) (c.getFont().getFontData()[0].height * scaleFactor);
+						return (int) ( c.getFont().getFontData()[0].height * fontFactor );
 					}
 
 				};
@@ -119,7 +121,7 @@ class BalsamiqControl extends Balsamiq {
 
 	@Override
 	int getFontSize() {
-		return (int) (c.getFont().getFontData()[0].height * scaleFactor);
+		return (int) ( c.getFont().getFontData()[0].height * fontFactor );
 	}
 
 
@@ -266,6 +268,16 @@ class BalsamiqControl extends Balsamiq {
 		}
 
 		return null;
+	}
+
+	public void setFontFactor( double factor )
+	{
+		fontFactor = factor;
+	}
+
+	public void setScaleFactor( double factor )
+	{
+		scaleFactor = factor;
 	}
 
 }
