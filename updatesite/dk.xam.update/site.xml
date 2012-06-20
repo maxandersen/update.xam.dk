@@ -6,5 +6,8 @@
    <feature url="features/dk.xam.spy.feature_0.5.2.jar" id="dk.xam.spy.feature" version="0.5.2">
       <category name="dk.xam.update.spy"/>
    </feature>
+   <feature url="features/dk.xam.spy.feature_0.6.0.jar" id="dk.xam.spy.feature" version="0.6.0">
+      <category name="dk.xam.update.spy"/>
+   </feature>
    <category-def name="dk.xam.update.spy" label="Spy"/>
 </site>
