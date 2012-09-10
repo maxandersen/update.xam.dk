@@ -142,7 +142,7 @@ class BalsamiqControl extends Balsamiq {
 			return false;
 		}
 
-		if (c.getClass().getCanonicalName().equals(Composite.class.getCanonicalName())) {
+		if (safeGetClass(c).getCanonicalName().equals(Composite.class.getCanonicalName())) {
 			return false;
 		}
 		if (c instanceof Label || c instanceof CLabel) { 
