@@ -84,9 +84,23 @@ public abstract class Balsamiq {
 		return " " + attribute + "=\"" + contents + "\" ";
 	}
 
+	static Class<?> safeGetClass(Object o) {
+	    Class<?> clazz = o.getClass();
+        String canonicalName = clazz.getCanonicalName();
+
+        while(canonicalName == null && clazz.getSuperclass() != null) {
+            canonicalName = clazz.getSuperclass().getCanonicalName();
+            clazz = clazz.getSuperclass();
+        }
+
+        return clazz;
+	}
+
 	static BalsamiqControl getControlTypeID(Control c) {
 
-		String simpleName = c.getClass().getSimpleName();
+	    Class<?> clazz = safeGetClass(c);
+
+	    String simpleName = clazz.getSimpleName();
 
 		if(simpleName.equals("Link") || simpleName.equals("Hyperlink")) {
 			return new BalsamiqControl("com.balsamiq.mockups::Link",c);
