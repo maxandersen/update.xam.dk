@@ -8,7 +8,7 @@ Currently it contains:
 
 ## How to contribute
 
-Read [CONTRIBUTING.md]()
+Read [CONTRIBUTING.md](CONTRIBUTING.md)
  
 ## Release notes
 
