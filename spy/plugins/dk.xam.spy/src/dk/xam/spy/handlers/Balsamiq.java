@@ -84,6 +84,7 @@ public abstract class Balsamiq {
 		return " " + attribute + "=\"" + contents + "\" ";
 	}
 
+	// looks for nearesst canoncial name - for components that are done with anonymous class we walk the hiearchy to find the best approximation.
 	static Class<?> safeGetClass(Object o) {
 	    Class<?> clazz = o.getClass();
         String canonicalName = clazz.getCanonicalName();
