@@ -2,7 +2,7 @@
 <feature
       id="dk.xam.spy.feature"
       label="Spy"
-      version="0.6.0"
+      version="0.6.1"
       provider-name="Max Rydahl Andersen">
 
    <description>
